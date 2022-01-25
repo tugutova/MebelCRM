@@ -6,3 +6,11 @@
 ![](https://github.com/tugutova/MebelCRM/blob/main/start.png)
 
 ![](https://github.com/tugutova/MebelCRM/blob/main/contracts.png)
+
+![](https://github.com/tugutova/MebelCRM/blob/main/orders1.png)
+
+![](https://github.com/tugutova/MebelCRM/blob/main/orders2.png)
+
+![](https://github.com/tugutova/MebelCRM/blob/main/report.png)
+
+![](https://github.com/tugutova/MebelCRM/blob/main/workers.png)
