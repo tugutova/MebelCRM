@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  
+  <div class="command">
+    <div class="control">
+      <form method="get" action="/admin/orders/create">
+        <button class="button margin-fix">Создать заказ</button>
+      </form>
+    </div>
+    <div class="control">
+      <form method="post" action="/admin/orders/searchbycontract">
+        <input name="contract_id" type="text" class="input" placeholder="Номер договора">
+        <button class="button input">Найти заказ</button>
+      </form>
+    </div>
+  </div>
+
+  <h1 class="title is-white">Все заказы:</h1>
+
+  <div class="all-orders">
+    {{#each orders}}
+    <ul class="order-item">
+      <div class="card">
+        <div class="card-content">
+          <h3 class="title"><a href="/admin/orders/{{ this.id }}">Договор №{{this.contract}}</a></h3>
+          <li class="subtitle">Статус: {{this.status}}</li>
+          <li>{{this.date}}, {{this.time}}</li>
+          <li>Бригада: {{this.brigade_id}}</li>
+          <li>Адрес: {{this.address}}</li>
+          <li>Заметки: {{this.comment}}</li>
+          {{#each this.Files}}
+          <li>
+            <a class="button btn-color" href="../tmp/my_uploads/{{this.dataValues.link}}">Договор</a>
+          </li>
+          {{/each}}
+          {{#if this.isActive}}
+          <li>
+          <a class="button btn-color" href='/admin/orders/{{ this.id }}/edit'>Редактировать</a>
+          </li>
+          {{/if}}
+          {{#if this.isCompleted}}
+          <li>
+            <a class="button btn-color" href="/admin/orders/{{this.id}}/report/">Отчет</a>
+          </li>
+          {{/if}}
+          
+        </div>
+      </div>
+    </ul>
+    {{/each}}
+
+  </div>
+
+
+
+</div>

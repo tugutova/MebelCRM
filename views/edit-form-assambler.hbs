@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  <div class="inner box">
+
+    <form method="post" action="/admin/assemblers/{{assembler.id}}/edit" class="form">
+
+      <label class="label" for="name">Имя:</label>
+      <input id="name" name="name" type="text" value='{{ assembler.name }}' class="input"><br />
+
+      <label class="label" for="last_name">Фамилия:</label>
+      <input id="last_name" name="last_name" type="text" value='{{ assembler.last_name }}' class="input"><br />
+
+      <label class="label" for="email">email:</label>
+      <input id="email" name="email" type="text" value='{{ assembler.email }}' class="input"><br />
+
+      <label class="label" for="phone">Телефон:</label>
+      <input id="phone" name="phone" type="text" value='{{ assembler.phone }}' class="input"><br />
+
+      <label class="label" for="brigade_id">Бригада:</label>
+      <select class="input" name="brigade_id" id="brigade_id">
+        <option value="{{assemblerBrigade.id}}">{{assemblerBrigade.name}}</option>
+        {{#each otherBrigades}}
+        <option value="{{this.id}}">{{this.name}}</option>{{/each}}
+      </select>
+      <br>
+      <button name="" type="submit" class="button is-success">Обновить данные</button>
+    </form>
+
+    <div class="edit-assembler">
+      <form method="post" action="/admin/assemblers/{{assembler.id}}/edit/changepassword" class="form">
+        <label class="label" for="password">Новый пароль:</label>
+        <input id="password" name="password" type="text" class="input"><br />
+        <button name="" type="submit" class="button is-link is-light">Сменить пароль учетной записи сотрудника </button>
+      </form>
+
+      <form method="post" action="/admin/assemblers/{{assembler.id}}" class="form">
+        <button type="submit" class="button is-danger is-light">Удалить карточку сотрудника</button>
+      </form>
+    </div>
+  </div>
+
+</div>

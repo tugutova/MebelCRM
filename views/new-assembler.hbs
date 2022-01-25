@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  <div class="container">
+    <div class="box">
+      <form method="post" action="/admin/assemblers" class="form">
+        <label for="name">Имя</label>
+        <input class="input" name="name" id="name" type="text">
+        <label for="last_name">Фамилия</label>
+        <input class="input" name="last_name" id="last_name" type="text">
+        <label for="email">Почта</label>
+        <input class="input" name="email" id="email" type="text">
+        <label for="password">Пароль</label>
+        <input class="input" name="password" id="password" type="text">
+        <label for="phone">Телефон</label>
+        <input class="input" name="phone" id="phone" type="text">
+        <label for="brigade_id">Бригада</label>
+        <select class="input" name="brigade_id" id="brigade_id">
+          {{#each brigades}}<option value="{{this.id}}">{{this.name}}</option>{{/each}}
+        </select><br>
+        <button class="button btn-color">Создать</button>
+      </form>
+    </div>
+  </div>
+  
+
+</div>

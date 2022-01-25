@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  <div class="card">
+    <div class="card-content">
+      <ul class="assembler">
+        <li class="title">{{assembler.name}} {{assembler.last_name}}</li>
+        <li class="subtitle">Бригада: {{assembler.brigade_id}} </li>
+        <li>email: {{assembler.email}}</li>
+        <li>телефон: {{assembler.phone}}</li>
+      </ul>
+
+      <form method="get" action="/admin/assemblers/{{assembler.id}}/edit">
+        <button class="button btn-color">Редактировать</button>
+      </form>
+    </div>
+  </div>
+  
+</div>

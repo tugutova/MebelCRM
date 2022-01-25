@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  
+  <form method="get" action="/admin/assemblers/new">
+    <button class="button">Создать нового сотрудника</button>
+  </form>
+  <ul class="all-assemblers">
+  {{#each assemblers}}
+  <li class="order-item">
+    <div class="card">
+      <div class="card-content">
+        <p class="title">{{this.name}} {{this.last_name}}</p>
+        <p class="subtitle">Бригада: {{this.brigade_id}}</p>
+        <a class="button btn-color" href='/admin/assemblers/{{this.id}}'>Карточка сотрудника</a>
+      </div>
+    </div>
+  </li>
+  {{/each}}
+  </ul>
+</div>

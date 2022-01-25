@@ -1,0 +1,146 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+body {
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  background: url('/stylesheets/image/backg.jpg') ;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #363636;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 30px;
+  width: 100%;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(41,49,51,0.80);
+  align-items: center;
+  padding: 7px 20px;
+}
+.auth {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+.input {
+  background: rgb(24 72 84 / 80%);
+  color: #ffffff;
+}
+.input:hover {
+  background: rgba(41,49,51,0.80);
+}
+
+.form {
+  margin: 20px 0;
+  display: grid;
+  justify-content: space-evenly;
+}
+.command {
+  display: flex;
+
+  justify-content: space-between;
+}
+.inner {
+  display: flex;
+  justify-content: space-around;
+  color:#6b6b6b;
+}
+.edit-assembler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.to-main {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.label {
+  
+}
+.admin-commands {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.new-order,
+.new-worker {
+  margin: 30px 0;
+}
+
+.all-orders {
+  width: auto;
+  /* height: 300px; */
+  padding-bottom: 20px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
+}
+.order-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.edit-order {
+  display: grid;
+}
+.form-check {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+.order-item {
+  padding-top: 15px;
+}
+
+.input::placeholder {
+  color: #6b6b6b;
+}
+
+.is-white {
+  color: #ffffff;
+}
+
+.btn-color {
+  background-color: rgb(24 72 84 / 80%);
+  color: #ffffff;
+}
+
+.margin-fix{
+  margin: 0 5px;
+}
+
+.button {
+  font-weight: 600;
+}
+.photos {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.img-report {
+  height: 100px;
+}
+.photos-item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}

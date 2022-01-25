@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  <div class="card">
+    <div class="card-content">
+      <div class="columns">
+        <div class="column is-two-thirds">
+          <form method="post" action="/admin/orders/{{order.id}}" class="form">
+            <label class="label" for="brigade_id">Бригада:</label>
+            <select class="input" name="brigade_id" id="brigade_id">
+              <option value="{{chosenBrigade.id}}">{{chosenBrigade.name}}</option>
+              {{#each otherBrigades}}
+              <option value="{{this.id}}">{{this.name}}</option>{{/each}}
+            </select><br />
+
+            <label class="label" for="date">Дата:</label>
+            <input id="date" name="date" type="date" value='{{ order.date }}' class="input"><br />
+
+            <label class="label" for="time">Время:</label>
+            <input id="time" name="time" type="time" value='{{ order.time }}' class="input"><br />
+
+            <label class="label" for="address">Адрес:</label>
+            <input id="address" name="address" type="text" value='{{ order.address }}' class="input"><br />
+
+            <label class="label" for="comment">Комментарий:</label>
+            <textarea id="comment" name="comment" placeholder="Введите данные" cols="30" rows="10"
+              class="input">{{ order.comment }}</textarea><br />
+
+            <button type="submit" class="button is-success">Обновить данные заказа</button>
+          </form>
+        </div>
+        <div class="column is-justify-content-center is-align-items-center">
+          <form class method="post" action="/admin/orders/{{order.id}}/cancel" class="form">
+            <button name="" type="submit" class="button is-danger is-light">Отменить заказ</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

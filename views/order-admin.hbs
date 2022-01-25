@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  <div class="box">
+      <ul>
+        <li class="title">Договор №{{ order.contract }}</li>
+        <li class="subtitle">{{ order.status }}</li>
+        <li>{{ order.date }}, {{ order.time }}</li>
+        <li>{{ order.address }}</li>
+        <li>{{ order.comment }}</li>
+        
+      </ul>
+      {{#if order.isCancelled}}
+      {{else}}
+        <a class="button btn-color" href='/admin/orders/{{ order.id }}/edit'>Редактировать</a>
+      {{/if}}
+  </div>
+
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+
+  <div class="box">
+  <h2 class="title">Форма для создания отчета</h2>
+
+
+  <form id="sendReportForm" method="post" action="/assembler/{{orderID}}/report" 
+    enctype="multipart/form-data">
+
+    <div class="form-check">
+      <div>
+        <input type="checkbox" id="factoryFault" name="factoryFault">
+        <label for="check-1">Рекламация по вине фабрики</label>
+      </div>
+      <div>
+        <input type="checkbox" id="managerFault" name="managerFault">
+        <label for="check-3">Рекламация по вине менеджера</label>
+      </div>
+      <div>
+        <input type="checkbox" id="assemblerFault" name="assemblerFault">
+        <label for="check-3">Рекламация в процессе сборки</label>
+      </div>
+      <div>
+        <input type="checkbox" id="assemblyActSigned" name="assemblyActSigned">
+        <label for="check-4">Акт сборки подписан клиентом</label>
+      </div>
+      <div>
+        <input type="checkbox" id="customerPresenceAtAssembly" name="customerPresenceAtAssembly">
+        <label for="check-5">Клиент присутствовал на монтаже</label>
+      </div>
+    </div>
+
+
+    {{!-- <input id="orderID" type="text" class="input"> --}}
+    <input multiple type="file" name="photo" class="input" /><br>
+    
+    <input class="button is-success is-light" type="submit" value="Отправить отчет">
+  </form>
+  </div>
+
+</div>

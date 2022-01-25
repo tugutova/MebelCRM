@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/admin">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  <div class="box">
+      <form name="sendForm" class="form" method="post" action="/admin/orders" enctype="multipart/form-data">
+    <label class="label" for="contract">Номер договора:</label>
+    <input id="contract" name="contract" type="text" placeholder="Введите данные" class="input"><br />
+
+    <label class="label" for="link">Договор:</label>
+    <input id="link" type="file" name="photo" class="input" /> <br />
+
+    <label class="label" for="brigade_id">Бригада:</label>
+    <select name="brigade_id" id="brigade_id" class="input">
+      {{#each brigades}}
+      <option value="{{this.id}}">{{this.name}}</option>
+      {{/each}}
+    </select><br />
+
+    <label class="label" for="administrator_id">Администратор:</label>
+    <select name="administrator_id" id="administrator_id" class="input">
+      {{#each admin}}
+      <option value="{{this.id}}">{{this.name}}</option>
+      {{/each}}
+    </select><br />
+
+    <label class="label" for="date">Дата:</label>
+    <input id="date" name="date" type="date" placeholder="Введите данные" class="input"><br />
+
+    <label class="label" for="time">Время:</label>
+    <input id="time" name="time" type="time" placeholder="Введите данные" class="input"><br />
+
+    <label class="label" for="address">Адрес:</label>
+    <input id="address" name="address" type="text" placeholder="Введите данные" class="input"><br />
+
+    <label class="label" for="comment">Комментарий:</label>
+    <textarea id="comment" name="comment" placeholder="Введите данные" cols="30" rows="10"
+      class="input"></textarea><br />
+
+    <button name="" type="submit" class="button btn-color">Создать заказ</button>
+  </form>
+  </div>
+
+</div>

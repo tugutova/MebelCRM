@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="to-main">
+    <a class="button" href="/assembler">На главную</a>
+    <button class="button btn-back" type="button" onclick="history.back();">Назад</button>
+  </div>
+  <div class="card">
+    <div class="card-content">
+      <h2 class="title">Отчет</h2>
+
+      <div class="report">
+        <h3 class="subtitle">Заказ {{report.order_id}}</h3>
+        <ul class="report-item">
+          <li>Сформирован: {{report.createdAt}}</li>
+          <li>Рекламация по вине фабрики: {{#if report.factoryFault}}<span class="icon"><i
+                class="fa fa-check-square"></i></span>{{/if}}</li>
+          <li>Рекламация по вине менеджера: {{#if report.managerFault}}<span class="icon"><i
+                class="fa fa-check-square"></i></span>{{/if}}</li>
+          <li>Рекламация в процессе сборки: {{#if report.assemblerFault}}<span class="icon"><i
+                class="fa fa-check-square"></i></span>{{/if}}</li>
+          <li>Акт сборки подписан клиентом: {{#if report.assemblyActSigned}}<span class="icon"><i
+                class="fa fa-check-square"></i></span>{{/if}}</li>
+          <li>Клиент присутствовал на монтаже: {{#if report.customerPresenceAtAssembly}}<span class="icon"><i
+                class="fa fa-check-square"></i></span>{{/if}}</li>
+        </ul>
+
+        <div class="photos">
+          {{#each photos}}
+          <div class="photos-item">
+            <img class="img-report" src="/{{this.link}}" alt="">
+            <a class="button is-light is-link" href="/{{this.link}}">Фото {{this.id}}</a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>

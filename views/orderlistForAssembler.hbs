@@ -1,0 +1,42 @@
+<div class="container">
+  {{#if openOrdersList}}
+  <div class="open-orders box">
+    <h2 class="title">Активные заказы</h2>
+    {{#each openOrdersList}}
+    <hr>
+    <h4 class="subtitle">Заказ {{this.id}}</h4>
+    <li>Дата выполнения: {{this.date}}</li>
+    <li>Время: {{this.time}}</li>
+    <li>Адрес: {{this.address}}</li>
+    <li>Статус: {{this.status}}</li>
+    {{#if this.isConfirmed}}
+    <form id="createReportForm" method="get" action="/assembler/{{this.id}}/report/create" data-orderID="{{this.id}}">
+      <input class="button btn-color" type="submit" value="Создать отчет" class="input">
+    </form>
+    {{else}}
+    <form id="confirmOrderForm" method="get" action="/assembler/{{this.id}}" data-orderID="{{this.id}}">
+      <input class="button btn-color" type="submit" value="Подтвердить заказ" class="input">
+    </form>
+    {{/if}}
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if closedOrdersList}}
+  <div class="closed-orders box">
+    
+    <h2 class="title">Закрытые заказы</h2>
+    {{#each closedOrdersList}}
+    <hr>
+    <h4 class="subtitle">Заказ {{this.id}}</h4>
+    <ul>
+      <li>Дата выполнения: {{this.date}}</li>
+      <li>Время: {{this.time}}</li>
+      <li>Адрес: {{this.address}}</li>
+      <li>Статус: {{this.status}}</li>
+    </ul>
+    {{/each}}
+    
+  </div>
+  {{/if}}
+</div>
