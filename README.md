@@ -4,3 +4,5 @@
 Работа приложения продемонстрирована ниже.
 
 ![](https://github.com/tugutova/MebelCRM/blob/main/start.png)
+
+![](https://github.com/tugutova/MebelCRM/blob/main/contracts.png)
